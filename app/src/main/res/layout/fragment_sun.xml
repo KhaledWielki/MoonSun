@@ -1,0 +1,51 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="12dp"
+    tools:context="com.example.adam.moonsun.FragmentSun">
+
+    <TextView
+        android:id="@+id/sun_information"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="casual"
+        android:paddingTop="50dp"
+        android:textSize="30dp"
+        android:text="Sun informations: " />
+
+
+    <TextView
+        android:id="@+id/sun_rise_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="5dp"
+        android:layout_below="@id/sun_information"
+        android:text="Today sun rise time and azimuth: " />
+
+    <TextView
+        android:id="@+id/sun_set_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="5dp"
+        android:layout_below="@id/sun_rise_time"
+        android:text="Today sun set time and azimuth: " />
+
+    <TextView
+        android:id="@+id/civil_sun_rise"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="5dp"
+        android:layout_below="@id/sun_set_time"
+        android:text="Civil sun rise time: " />
+
+    <TextView
+        android:id="@+id/civil_sun_set"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="5dp"
+        android:layout_below="@id/civil_sun_rise"
+        android:text="Civile sun set time: " />
+
+</RelativeLayout>

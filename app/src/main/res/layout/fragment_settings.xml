@@ -1,0 +1,117 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="12dp"
+    tools:context="com.example.adam.moonsun.FragmentSettings">
+
+    <TextView
+        android:id="@+id/settings_information"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="casual"
+        android:paddingTop="50dp"
+        android:textSize="30dp"
+        android:text="Settings: " />
+
+
+    <TextView
+        android:id="@+id/set_longitude"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="15dp"
+        android:paddingLeft="5dp"
+        android:textSize="20dp"
+        android:layout_below="@id/settings_information"
+        android:text="Set longitude: " />
+
+    <TextView
+        android:id="@+id/set_latitude"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="15dp"
+        android:paddingLeft="5dp"
+        android:textSize="20dp"
+        android:layout_below="@id/set_longitude"
+        android:text="Set latitude: " />
+
+    <TextView
+        android:id="@+id/set_refresh_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="80dp"
+        android:paddingLeft="5dp"
+        android:textSize="20dp"
+        android:layout_below="@id/set_latitude"
+        android:text="Set refresh time (minutes): " />
+
+    <EditText
+        android:id="@+id/value_set_longitude"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="5dp"
+        android:paddingLeft="5dp"
+        android:inputType="numberDecimal"
+        android:layout_toRightOf="@id/set_longitude"
+        android:layout_below="@id/settings_information"/>
+
+    <EditText
+        android:id="@+id/value_set_latitude"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="5dp"
+        android:paddingLeft="5dp"
+        android:inputType="numberDecimal"
+        android:layout_toRightOf="@id/set_latitude"
+        android:layout_below="@id/value_set_longitude"/>
+
+    <EditText
+        android:id="@+id/value_set_refresh_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="80dp"
+        android:paddingLeft="5dp"
+        android:inputType="numberDecimal"
+        android:layout_toRightOf="@id/set_refresh_time"
+        android:layout_below="@id/value_set_latitude"/>
+    <Button
+        android:id="@+id/button_confirm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CONFIRM"
+        android:paddingTop="15dp"
+        android:layout_below="@id/value_set_refresh_time"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"/>
+    <TextView
+        android:id="@+id/test1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:paddingLeft="5dp"
+        android:textSize="20dp"
+        android:layout_below="@id/button_confirm"
+        android:text="test1 " />
+    <TextView
+        android:id="@+id/test2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:paddingLeft="5dp"
+        android:textSize="20dp"
+        android:layout_below="@id/test1"
+        android:text="test2 " />
+    <TextView
+        android:id="@+id/test3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:paddingLeft="5dp"
+        android:textSize="20dp"
+        android:layout_below="@id/test2"
+        android:text="test3 " />
+
+
+
+</RelativeLayout>

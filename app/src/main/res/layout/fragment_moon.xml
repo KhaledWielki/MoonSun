@@ -1,0 +1,122 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="12dp"
+    tools:context="com.example.adam.moonsun.FragmentMoon">
+
+    <TextView
+        android:id="@+id/moon_information"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="casual"
+        android:paddingTop="50dp"
+        android:textSize="30dp"
+        android:text="Moon informations: " />
+
+    <TextView
+        android:id="@+id/moon_set_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="5dp"
+        android:layout_below="@id/moon_information"
+        android:text="Toay moon set time: " />
+
+    <TextView
+        android:id="@+id/moon_rise_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="5dp"
+        android:layout_below="@id/moon_set_time"
+        android:text="Today moon rise time: " />
+
+    <TextView
+        android:id="@+id/closets_new_moon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="5dp"
+        android:layout_below="@id/moon_rise_time"
+        android:text="Closest new moon date: " />
+
+    <TextView
+        android:id="@+id/closets_full_moon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="5dp"
+        android:layout_below="@id/closets_new_moon"
+        android:text="Closest full moon date: " />
+
+    <TextView
+        android:id="@+id/moon_percentage_faze"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="5dp"
+        android:layout_below="@id/closets_full_moon"
+        android:text="Moon faze in percents: " />
+
+    <TextView
+        android:id="@+id/day_of_synodal_month"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="5dp"
+        android:layout_below="@id/moon_percentage_faze"
+        android:text="Synodal month day: " />
+
+    <TextView
+        android:id="@+id/value_moon_set_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/moon_set_time"
+        android:layout_below="@id/moon_information"
+        android:paddingTop="5dp"
+        android:paddingLeft="5dp"/>
+
+    <TextView
+        android:id="@+id/value_moon_rise_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="5dp"
+        android:paddingLeft="5dp"
+        android:layout_toRightOf="@id/moon_rise_time"
+        android:layout_below="@id/value_moon_set_time"/>
+
+    <TextView
+        android:id="@+id/value_closets_new_moon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="5dp"
+        android:paddingLeft="5dp"
+        android:layout_toRightOf="@id/closets_new_moon"
+        android:layout_below="@id/value_moon_rise_time"/>
+
+    <TextView
+        android:id="@+id/value_closets_full_moon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="5dp"
+        android:paddingLeft="5dp"
+        android:layout_toRightOf="@id/closets_full_moon"
+        android:layout_below="@id/value_closets_new_moon"/>
+
+    <TextView
+        android:id="@+id/value_moon_percentage_faze"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="5dp"
+        android:paddingLeft="5dp"
+        android:layout_toRightOf="@id/moon_percentage_faze"
+        android:layout_below="@id/value_closets_full_moon" />
+
+    <TextView
+        android:id="@+id/value_day_of_synodal_month"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="5dp"
+        android:paddingLeft="5dp"
+        android:layout_toRightOf="@id/day_of_synodal_month"
+        android:layout_below="@id/value_moon_percentage_faze"/>
+
+
+
+</RelativeLayout>
