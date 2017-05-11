@@ -83,5 +83,15 @@
         android:paddingLeft="5dp"
         android:layout_toRightOf="@id/civil_sun_set"
         android:layout_below="@id/value_sun_rise_civil_time"/>
+    <TextClock
+        android:id="@+id/textClock"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:format24Hour="k:mm:ss"
+        android:format12Hour="@null"
+        android:gravity="end"
+        android:layout_below="@id/value_sun_set_civil_time"
+        android:textSize="20sp" />
 
 </RelativeLayout>

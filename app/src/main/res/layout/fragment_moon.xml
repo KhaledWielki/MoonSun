@@ -117,6 +117,17 @@
         android:layout_toRightOf="@id/day_of_synodal_month"
         android:layout_below="@id/value_moon_percentage_faze"/>
 
+    <TextClock
+        android:id="@+id/textClock"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:format24Hour="k:mm:ss"
+        android:format12Hour="@null"
+        android:gravity="end"
+        android:layout_below="@id/value_day_of_synodal_month"
+        android:textSize="20sp" />
+
 
 
 </RelativeLayout>
