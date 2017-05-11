@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/home/khaled/AndroidStudioProjects/MoonSun/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="510aa6efc159983dfbffa676a0dae37568c0a46f">
+        <dex dex="/home/khaled/AndroidStudioProjects/MoonSun/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_887019242305ba2b36c12cc29feac91bf6ba3e95/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/khaled/AndroidStudioProjects/MoonSun/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="7796c17766a7c643c3d36d1de8cbfd374616db63">
+        <dex dex="/home/khaled/AndroidStudioProjects/MoonSun/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_e5332cbd4e038cb1a764d43c002955e0ac6a584a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/khaled/AndroidStudioProjects/MoonSun/app/libs/astrocalculator.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="72ab0f44b65a7732286d24fd30e9392db95cc171">
+        <dex dex="/home/khaled/AndroidStudioProjects/MoonSun/app/build/intermediates/transforms/dex/debug/folders/1000/2/astrocalculator_693e1732bbd2dc937dcb4a6715140b44e1af1afd/classes.dex" />
+    </item>
+
+</items>

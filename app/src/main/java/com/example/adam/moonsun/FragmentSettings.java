@@ -35,6 +35,7 @@ import static com.example.adam.moonsun.R.layout.fragment_settings;
  */
 public class FragmentSettings extends Fragment implements View.OnClickListener {
 
+    MainActivity activityMain = new MainActivity();
     Button buttonConfirm;
 
     EditText valueLatitude;
@@ -45,11 +46,10 @@ public class FragmentSettings extends Fragment implements View.OnClickListener {
     TextView text2;
     TextView text3;
 
-    public double latitude = 0;
-    public double longitude = 0;
-    public int refreshTime = 0;
+    public double latitude;
+    public double longitude;
+    public int refreshTime;
 
-    Activity activity = getActivity();
     public FragmentSettings() {
         // Required empty public constructor
     }
@@ -70,9 +70,15 @@ public class FragmentSettings extends Fragment implements View.OnClickListener {
         valueLatitude = (EditText) myView.findViewById(R.id.value_set_latitude);
         valueLongitude = (EditText) myView.findViewById(R.id.value_set_longitude);
         valueRefreshTime = (EditText) myView.findViewById(R.id.value_set_refresh_time);
-        text1 = (TextView) myView.findViewById(R.id.test1);
-        text2 = (TextView) myView.findViewById(R.id.test2);
-        text3 = (TextView) myView.findViewById(R.id.test3);
+
+        latitude = MainActivity.latitude;
+        longitude = MainActivity.longitude;
+        refreshTime = MainActivity.refreshTime;
+
+        valueLongitude.setText(Double.toString(longitude));
+        valueLatitude.setText(Double.toString(latitude));
+        valueRefreshTime.setText(Integer.toString(refreshTime));
+
         return myView;
     }
 
@@ -84,12 +90,13 @@ public class FragmentSettings extends Fragment implements View.OnClickListener {
             longitude = Double.parseDouble(valueLongitude.getText().toString());
             refreshTime = Integer.parseInt(valueRefreshTime.getText().toString());
 
-            text1.setText(Double.toString(longitude));
-            text2.setText(Double.toString(latitude));
-            text3.setText(Integer.toString(refreshTime));
+            MainActivity.latitude = latitude;
+            MainActivity.longitude = longitude;
+            MainActivity.refreshTime = refreshTime;
+
         }else {
 
-            Toast.makeText(activity,"Some fields are empty!",Toast.LENGTH_SHORT).show();
+            Toast.makeText(activityMain,"Some fields are empty!",Toast.LENGTH_SHORT).show();
         }
     }
 }
