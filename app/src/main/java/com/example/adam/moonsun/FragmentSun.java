@@ -17,7 +17,6 @@ import com.astrocalculator.AstroDateTime;
 import java.text.DecimalFormat;
 import java.util.Date;
 
-import static com.example.adam.moonsun.R.layout.fragment_moon;
 import static com.example.adam.moonsun.R.layout.fragment_sun;
 
 
@@ -82,9 +81,9 @@ public class FragmentSun extends Fragment {
 
         if (sunInfo.getSunset().getHour()+1 < 10 || sunInfo.getSunset().getMinute() < 10) {
             if (sunInfo.getSunset().getHour()+1 < 10 && sunInfo.getSunset().getMinute() < 10) {
-                sunSetTimeWithAzimuth += "0" + (sunInfo.getSunset().getHour()+1) + ":" + "0" + sunInfo.getSunset().getMinute() + "   " + decimalFormat.format(sunInfo.getAzimuthSet());
+                sunSetTimeWithAzimuth += "0" + (sunInfo.getSunset().getHour()+1) + ":" + "0" + sunInfo.getSunset().getMinute() + " " + decimalFormat.format(sunInfo.getAzimuthSet());
             } else if (sunInfo.getSunset().getHour()+1 < 10) {
-                sunSetTimeWithAzimuth += "0" + (sunInfo.getSunset().getHour()+1) + ":" + sunInfo.getSunset().getMinute() + "   " + decimalFormat.format(sunInfo.getAzimuthSet());
+                sunSetTimeWithAzimuth += "0" + (sunInfo.getSunset().getHour()+1) + ":" + sunInfo.getSunset().getMinute() + " " + decimalFormat.format(sunInfo.getAzimuthSet());
             } else
                 sunSetTimeWithAzimuth += (sunInfo.getSunset().getHour()+1) + ":" + "0" + sunInfo.getSunset().getMinute() + "   " + decimalFormat.format(sunInfo.getAzimuthSet());
         } else
@@ -92,13 +91,13 @@ public class FragmentSun extends Fragment {
 
         if (sunInfo.getSunrise().getHour()+1 < 10 || sunInfo.getSunrise().getMinute() < 10) {
             if (sunInfo.getSunrise().getHour()+1 < 10 && sunInfo.getSunrise().getMinute() < 10) {
-                sunRiseTimeWithAzimuth += "0" + (sunInfo.getSunrise().getHour()+1) + ":" + "0" + sunInfo.getSunrise().getMinute() + "   " + decimalFormat.format(sunInfo.getAzimuthRise());
+                sunRiseTimeWithAzimuth += "0" + (sunInfo.getSunrise().getHour()+1) + ":" + "0" + sunInfo.getSunrise().getMinute() + " " + decimalFormat.format(sunInfo.getAzimuthRise());
             } else if (sunInfo.getSunrise().getHour()+1 < 10) {
                 sunRiseTimeWithAzimuth += "0" + (sunInfo.getSunrise().getHour()+1) + ":" + sunInfo.getSunrise().getMinute() + "   " + decimalFormat.format(sunInfo.getAzimuthRise());
             } else
-                sunRiseTimeWithAzimuth += (sunInfo.getSunrise().getHour()+1) + ":" + "0" + sunInfo.getSunrise().getMinute() + "   " + decimalFormat.format(sunInfo.getAzimuthRise());
+                sunRiseTimeWithAzimuth += (sunInfo.getSunrise().getHour()+1) + ":" + "0" + sunInfo.getSunrise().getMinute() + " " + decimalFormat.format(sunInfo.getAzimuthRise());
         } else
-            sunRiseTimeWithAzimuth += (sunInfo.getSunrise().getHour()+1) + ":" + sunInfo.getSunrise().getMinute() + "   " + decimalFormat.format(sunInfo.getAzimuthRise());
+            sunRiseTimeWithAzimuth += (sunInfo.getSunrise().getHour()+1) + ":" + sunInfo.getSunrise().getMinute() + " " + decimalFormat.format(sunInfo.getAzimuthRise());
 
 
         valueSunRise.setText(sunRiseTimeWithAzimuth);
