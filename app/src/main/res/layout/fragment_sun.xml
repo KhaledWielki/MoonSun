@@ -48,4 +48,40 @@
         android:layout_below="@id/civil_sun_rise"
         android:text="Civile sun set time: " />
 
+    <TextView
+        android:id="@+id/value_sun_rise_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/sun_rise_time"
+        android:layout_below="@id/sun_information"
+        android:paddingTop="5dp"
+        android:paddingLeft="5dp"/>
+
+    <TextView
+        android:id="@+id/value_sun_set_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="5dp"
+        android:paddingLeft="5dp"
+        android:layout_toRightOf="@id/sun_set_time"
+        android:layout_below="@id/value_sun_rise_time"/>
+
+    <TextView
+        android:id="@+id/value_sun_rise_civil_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="5dp"
+        android:paddingLeft="5dp"
+        android:layout_toRightOf="@id/civil_sun_rise"
+        android:layout_below="@id/value_sun_set_time"/>
+
+    <TextView
+        android:id="@+id/value_sun_set_civil_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="5dp"
+        android:paddingLeft="5dp"
+        android:layout_toRightOf="@id/civil_sun_set"
+        android:layout_below="@id/value_sun_rise_civil_time"/>
+
 </RelativeLayout>

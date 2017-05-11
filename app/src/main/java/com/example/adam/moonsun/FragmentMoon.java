@@ -88,28 +88,32 @@ public class FragmentMoon extends Fragment {
         AstroCalculator astroCalculator = new AstroCalculator(astroDateTime, astroLocation);
         AstroCalculator.MoonInfo moonInfo = astroCalculator.getMoonInfo();
 
+        moonFazePercents += decimalFormat.format((1 - moonInfo.getIllumination()) * 100) +"%";
 
-        if(moonInfo.getMoonset().getHour() < 10 || moonInfo.getMoonset().getMinute() < 10) {
-            if(moonInfo.getMoonset().getHour() < 10 && moonInfo.getMoonset().getMinute() < 10) {
-                moonSetTime += "0"+moonInfo.getMoonset().getHour() + ":" + "0"+moonInfo.getMoonset().getMinute();
+        if(moonInfo.getMoonset().getHour()+1 < 10 || moonInfo.getMoonset().getMinute() < 10) {
+            if(moonInfo.getMoonset().getHour()+1 < 10 && moonInfo.getMoonset().getMinute() < 10) {
+                moonSetTime += "0"+(moonInfo.getMoonset().getHour()+1) + ":" + "0"+moonInfo.getMoonset().getMinute();
             }
-            else if(moonInfo.getMoonset().getHour() < 10) {
-                moonSetTime += "0" + moonInfo.getMoonset().getHour() + ":" + moonInfo.getMoonset().getMinute();
+            else if(moonInfo.getMoonset().getHour()+1 < 10) {
+                moonSetTime += "0" + (moonInfo.getMoonset().getHour()+1) + ":" + moonInfo.getMoonset().getMinute();
             }
             else
-                moonSetTime += moonInfo.getMoonset().getHour() + ":" + "0" + moonInfo.getMoonset().getMinute();
-        }
+                moonSetTime += (moonInfo.getMoonset().getHour()+1) + ":" + "0" + moonInfo.getMoonset().getMinute();
+        } else
+            moonSetTime += (moonInfo.getMoonset().getHour()+1) + ":" + moonInfo.getMoonset().getMinute();
 
-        if(moonInfo.getMoonrise().getHour() < 10 || moonInfo.getMoonrise().getMinute() < 10) {
-            if(moonInfo.getMoonrise().getHour() < 10 && moonInfo.getMoonrise().getMinute() < 10) {
-                moonRiseTime += "0"+moonInfo.getMoonrise().getHour() + ":" + "0"+moonInfo.getMoonrise().getMinute();
+        if(moonInfo.getMoonrise().getHour()+1 < 10 || moonInfo.getMoonrise().getMinute() < 10) {
+            if(moonInfo.getMoonrise().getHour()+1 < 10 && moonInfo.getMoonrise().getMinute() < 10) {
+                moonRiseTime += "0"+(moonInfo.getMoonrise().getHour()+1) + ":" + "0"+moonInfo.getMoonrise().getMinute();
             }
-            else if(moonInfo.getMoonrise().getHour() < 10) {
-                moonRiseTime += "0" + moonInfo.getMoonrise().getHour() + ":" + moonInfo.getMoonrise().getMinute();
+            else if(moonInfo.getMoonrise().getHour()+1 < 10) {
+                moonRiseTime += "0" + (moonInfo.getMoonrise().getHour()+1) + ":" + moonInfo.getMoonrise().getMinute();
             }
             else
-                moonRiseTime += moonInfo.getMoonrise().getHour() + ":" + "0" + moonInfo.getMoonrise().getMinute();
+                moonRiseTime += (moonInfo.getMoonrise().getHour()+1) + ":" + "0" + moonInfo.getMoonrise().getMinute();
         }
+        else
+            moonRiseTime += (moonInfo.getMoonrise().getHour()+1) + ":" + moonInfo.getMoonrise().getMinute();
 
         int temp = moonInfo.getNextFullMoon().getMonth();
         switch (temp) {
@@ -284,8 +288,6 @@ public class FragmentMoon extends Fragment {
         }
 
 
-        moonFazePercents += decimalFormat.format((1 - moonInfo.getIllumination()) * 100) +"%";
-
 
 
         valueMoonSetTime.setText(moonSetTime);
@@ -293,15 +295,6 @@ public class FragmentMoon extends Fragment {
         valueClosestFullMoon.setText(closestFullMoon);
         valueClosestNewMoon.setText(closestNewMoon);
         valueMoonFaze.setText(moonFazePercents);
-
-
-
-        /*valueMoonSetTime.setText(Double.toString(moonSetTime));
-        valueMoonRiseTime.setText(Double.toString(moonRiseTime));
-        valueClosestNewMoon.setText(Double.toString(closestNewMoon));
-        valueClosestFullMoon.setText(Double.toString(closestFullMoon));
-        valueMoonFaze.setText(Double.toString(moonFazePercents));
-        valueSynodalMonthDay.setText(Integer.toString(synodalMonthDay));*/
 
         return myView;
     }

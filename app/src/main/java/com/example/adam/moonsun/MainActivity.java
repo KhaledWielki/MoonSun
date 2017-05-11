@@ -3,6 +3,9 @@ package com.example.adam.moonsun;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.text.format.DateFormat;
+import android.text.format.Time;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -47,6 +50,23 @@ public class MainActivity extends AppCompatActivity
 
         navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+
+        Clock c=new Clock(this);
+        c.AddClockTickListner(new OnClockTickListner() {
+
+            @Override
+            public void OnSecondTick(Time currentTime) {
+                Log.d("Tick Test per Second", DateFormat.format("h:mm:ss aa ", currentTime.toMillis(true)).toString());
+
+            }
+
+            @Override
+            public void OnMinuteTick(Time currentTime) {
+                Log.d("Tick Test per Minute",DateFormat.format("h:mm aa", currentTime.toMillis(true)).toString());
+
+            }
+        });
     }
 
 
@@ -110,29 +130,5 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
-    }
-
-    public double getLatitude() {
-        return latitude;
-    }
-
-    public void setLatitude(double latitude) {
-        this.latitude = latitude;
-    }
-
-    public double getLongitude() {
-        return longitude;
-    }
-
-    public void setLongitude(double longitude) {
-        this.longitude = longitude;
-    }
-
-    public int getRefreshTime() {
-        return refreshTime;
-    }
-
-    public void setRefreshTime(int refreshTime) {
-        this.refreshTime = refreshTime;
     }
 }
