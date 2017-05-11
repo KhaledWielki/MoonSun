@@ -16,12 +16,16 @@ import com.astrocalculator.AstroDateTime;
 
 import java.text.DecimalFormat;
 import java.util.Date;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import static com.example.adam.moonsun.R.layout.fragment_moon;
 
 
 @RequiresApi(api = Build.VERSION_CODES.N)
 public class FragmentMoon extends Fragment {
+
+    View myView;
 
     public double latitude;
     public double longitude;
@@ -34,8 +38,6 @@ public class FragmentMoon extends Fragment {
     public String moonFazePercents = "";
     public String synodalMonthDay = "";
 
-    String month = "";
-    String day = "";
 
     TextView valueMoonSetTime;
     TextView valueMoonRiseTime;
@@ -53,7 +55,7 @@ public class FragmentMoon extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View myView = inflater.inflate(fragment_moon, container, false);
+        myView = inflater.inflate(fragment_moon, container, false);
 
         DecimalFormat decimalFormat = new DecimalFormat("#.##");
 
@@ -89,6 +91,16 @@ public class FragmentMoon extends Fragment {
         AstroCalculator.MoonInfo moonInfo = astroCalculator.getMoonInfo();
 
         moonFazePercents += decimalFormat.format((1 - moonInfo.getIllumination()) * 100) +"%";
+
+        if(refreshTime != 0) {
+            Timer myTimer = new Timer();
+            myTimer.schedule(new TimerTask() {
+                @Override
+                public void run() {
+                    refresh();
+                }
+            }, 0, (refreshTime * 60 * 1000));
+        }
 
         if(moonInfo.getMoonset().getHour()+1 < 10 || moonInfo.getMoonset().getMinute() < 10) {
             if(moonInfo.getMoonset().getHour()+1 < 10 && moonInfo.getMoonset().getMinute() < 10) {
@@ -287,9 +299,6 @@ public class FragmentMoon extends Fragment {
                 break;
         }
 
-
-
-
         valueMoonSetTime.setText(moonSetTime);
         valueMoonRiseTime.setText(moonRiseTime);
         valueClosestFullMoon.setText(closestFullMoon);
@@ -303,5 +312,38 @@ public class FragmentMoon extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+    }
+
+    public void refresh() {
+        DecimalFormat decimalFormat = new DecimalFormat("#.##");
+
+        latitude = MainActivity.latitude;
+        longitude = MainActivity.longitude;
+        refreshTime = MainActivity.refreshTime;
+
+        valueMoonFaze = (TextView) myView.findViewById(R.id.value_moon_percentage_faze);
+
+        int year = Calendar.getInstance().get(Calendar.YEAR);
+        int month = Calendar.getInstance().get(Calendar.MONTH);
+        month = month + 1;
+        int day = Calendar.getInstance().get(Calendar.DAY_OF_MONTH);
+        int hour = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
+        int minute = Calendar.getInstance().get(Calendar.MINUTE);
+        int second = Calendar.getInstance().get(Calendar.SECOND);
+
+        Calendar calendar = Calendar.getInstance();
+        TimeZone timeZone = calendar.getTimeZone();
+        int mGMTOffset = timeZone.getRawOffset();
+
+
+
+        AstroCalculator.Location astroLocation = new AstroCalculator.Location(latitude, longitude);
+        AstroDateTime astroDateTime = new AstroDateTime(year, month, day, hour, minute, second, mGMTOffset, timeZone.inDaylightTime(new Date()));
+        AstroCalculator astroCalculator = new AstroCalculator(astroDateTime, astroLocation);
+        AstroCalculator.MoonInfo moonInfo = astroCalculator.getMoonInfo();
+
+        moonFazePercents = decimalFormat.format((1 - moonInfo.getIllumination()) * 100) +"%";
+
+        valueMoonFaze.setText(moonFazePercents);
     }
 }
